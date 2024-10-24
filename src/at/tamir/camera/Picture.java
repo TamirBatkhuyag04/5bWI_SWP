@@ -1,17 +1,17 @@
 package at.tamir.camera;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Picture {
     // Instance variables
     private String name;
-    private LocalDate date;
+    private long date;
     private int size;
 
     // Constructor
-    public Picture(String name, LocalDate date, int size) {
+    public Picture(String name, int size) {
         this.name = name;
-        this.date = date;
+        this.date = new Date().getTime();
         this.size = size;
     }
 
@@ -20,7 +20,7 @@ public class Picture {
         return name;
     }
 
-    public LocalDate getDate() {
+    public long getDate() {
         return date;
     }
 
@@ -31,10 +31,6 @@ public class Picture {
     // Setter
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public void setSize(int size) {
