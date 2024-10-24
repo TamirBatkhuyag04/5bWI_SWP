@@ -7,7 +7,8 @@ public class Main {
         // Objects
         Producer producer = new Producer("Name of Producer", "Japan");
         Lens lens = new Lens("Name of Lens", 1080);
-        Camera camera = new Camera(4000, 540, "grey");
+        MemoryCard memoryCard = new MemoryCard(1024);
+        Camera camera = new Camera(4000, 540, "grey", producer, lens, memoryCard);
 
         while (true) {
             // User Options
@@ -21,23 +22,16 @@ public class Main {
 
             // User input results
             if (userOption == 1) {
-                System.out.println("Which size should the picture be");
-                System.out.println("1. small: 2 MB");
-                System.out.println("2. medium: 4 MB");
-                System.out.println("3. large: 6 MB");
-                int userOption2 = input.nextInt();
-                if (userOption2 == 1) {
-                    System.out.println("took small picture");
-                } else if (userOption2 == 2) {
-                    System.out.println("took medium picture");
-                } else if (userOption2 == 3) {
-                    System.out.println("took large picture");
-                } else {
-                    System.out.println("invalid option");
-                }
+                System.out.println("Taking picture");
+                camera.takePicture();
+            } else if (userOption == 2) {
+                System.out.println("Opening storage");
 
             } else if (userOption == 3) {
-                System.out.println("process finished");
+                System.out.println("Process finished");
+
+            } else {
+                System.out.println("Invalid option");
             }
         }
 
