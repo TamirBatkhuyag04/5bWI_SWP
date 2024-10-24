@@ -4,7 +4,22 @@ import org.junit.jupiter.api.Test;
 
 public class CameraTest {
     @Test
-    void testGetId() {
+    void testGetColor() {
+
+    }
+
+    @Test
+    void testGetPixel() {
+
+    }
+
+    @Test
+    void testGetWeight() {
+
+    }
+
+    @Test
+    void testTakePicture() {
 
     }
 }

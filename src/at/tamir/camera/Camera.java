@@ -5,12 +5,16 @@ public class Camera {
     private int pixel;
     private int weight;
     private String color;
+    private Lens lens;
+    private MemoryCard memoryCard;
 
     // Constructor
-    public Camera(int pixel, int weight, String color) {
+    public Camera(int pixel, int weight, String color, Lens lens, MemoryCard memoryCard) {
         this.pixel = pixel;
         this.weight = weight;
         this.color = color;
+        this.lens = lens;
+        this.memoryCard = memoryCard;
     }
 
     // Method takePicture()
