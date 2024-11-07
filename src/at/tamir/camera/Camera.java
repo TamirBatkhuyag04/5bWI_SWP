@@ -23,14 +23,27 @@ public class Camera {
         this.memoryCard = memoryCard;
     }
 
-    // Method takePicture()
-    public void takePicture() {
-
-        Picture pic = new Picture("DEmo", 1000);
-        // memoryCard.saveFile(pic);
+    // Methods
+    // takePicture()
+    public Picture takePicture(int size) {
+        Picture picture = null;
+        if (size == 1) {
+            System.out.println("taking small picture");
+            picture = new Picture("small.png", 2);
+        } else if (size == 2) {
+            System.out.println("taking medium picture");
+            picture = new Picture("medium.png", 4);
+        } else if (size == 3) {
+            System.out.println("taking large picture");
+            picture = new Picture("large.png", 8);
+        }
+        return picture;
     }
 
-    public List<Picture> getAllPictures() {
+    // showAllPictures()
+    public List<Picture> showAllPictures() {
+        System.out.println("All pictures");
+        List<Picture> pictures = pictures;
         // return memoryCard.getAllPictures();
         return null;
     }
