@@ -1,17 +1,13 @@
 package at.tamir.camera;
 
-import java.util.List;
-import java.util.Scanner;
-import java.time.LocalDate;
-
 public class Camera {
     // Instance variables
     private int pixel;
     private int weight;
     private String color;
+    private Producer producer;
     private Lens lens;
     private MemoryCard memoryCard;
-    private Producer producer;
 
     // Constructor
     public Camera(int pixel, int weight, String color, Producer producer, Lens lens, MemoryCard memoryCard) {
@@ -41,12 +37,13 @@ public class Camera {
     }
 
     // showAllPictures()
-    public List<Picture> showAllPictures() {
-        System.out.println("All pictures");
-        List<Picture> pictures = pictures;
-        // return memoryCard.getAllPictures();
-        return null;
-    }
+    // public List<Picture> showAllPictures() {
+    // System.out.println("All pictures");
+    // List<Picture> pictures = memoryCard.showAll();
+    // for (Picture picture : pictures) {
+    // System.out.println(Picture.getPicture);
+    // }
+    // }
 
     // Getter
     public int getPixel() {
@@ -59,5 +56,17 @@ public class Camera {
 
     public String getColor() {
         return color;
+    }
+
+    public Lens getLens() {
+        return lens;
+    }
+
+    public MemoryCard getMemoryCard() {
+        return memoryCard;
+    }
+
+    public Producer getProducer() {
+        return producer;
     }
 }
