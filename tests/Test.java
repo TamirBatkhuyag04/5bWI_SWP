@@ -1,4 +1,4 @@
-package at.tamir.camera.tests;
+package at.tamir.Camera.tests;
 
 public @interface Test {
 

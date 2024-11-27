@@ -1,4 +1,4 @@
-package at.tamir.camera;
+package at.tamir.Camera;
 
 import java.util.*;
 
