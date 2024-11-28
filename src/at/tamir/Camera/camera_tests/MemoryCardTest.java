@@ -1,4 +1,4 @@
-package at.tamir.Camera.tests;
+package at.tamir.Camera.camera_tests;
 
 public class MemoryCardTest {
     @Test
