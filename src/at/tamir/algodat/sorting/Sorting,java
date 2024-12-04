@@ -1,0 +1,5 @@
+package at.tamir.algodat.sorting;
+
+public static void man(String[] args){
+    DataGenerator generator = new DataGenerator();
+}

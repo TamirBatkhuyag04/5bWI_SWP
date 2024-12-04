@@ -1,4 +1,4 @@
-package at.tamir.algodat;
+package at.tamir.algodat.dataGenerator;
 
 import java.util.Random;
 

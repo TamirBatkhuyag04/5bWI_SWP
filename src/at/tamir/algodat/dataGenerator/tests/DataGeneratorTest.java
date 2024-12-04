@@ -1,7 +1,9 @@
-package at.tamir.algodat.tests;
+package at.tamir.algodat.dataGenerator.tests;
 
 import org.junit.jupiter.api.Test;
-import at.tamir.algodat.DataGenerator;
+
+import at.tamir.algodat.dataGenerator.DataGenerator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataGeneratorTest {
