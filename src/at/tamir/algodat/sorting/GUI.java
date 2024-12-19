@@ -13,6 +13,7 @@ public class GUI {
         int lowestNumber = scanner.nextInt();
         System.out.println("Enter the highest occouring number: ");
         int highestNumber = scanner.nextInt();
+        scanner.close();
 
         int[] numbers = DataGenerator.generateDataArray2(arraySize, lowestNumber, highestNumber);
         System.out.println("Generated Array: ");
