@@ -13,32 +13,32 @@ public class MemoryCard {
         this.pictures = new ArrayList<>();
     }
 
-    // Method: Speicherplatz überprüfen und Bild speichern
+    // savePictures()
     public boolean savePicture(Picture picture) {
         double usedMemory = getUsedMemory();
 
         if (usedMemory + picture.getSize() > totalMemory) {
             System.out.println("Error: Not enough memory to save the picture!");
-            return false; // Speicherplatz reicht nicht
+            return false;
         }
 
         pictures.add(picture);
         System.out.println(
                 "Picture saved. Remaining memory: " + (totalMemory - (usedMemory + picture.getSize())) + " MB.");
-        return true; // Bild erfolgreich gespeichert
+        return true;
     }
 
-    // Berechneter Speicherverbrauch
+    // showAll()
+    public List<Picture> showAll() {
+        return pictures;
+    }
+
     public double getUsedMemory() {
         return pictures.stream().mapToDouble(Picture::getSize).sum();
     }
 
     public double getRemainingMemory() {
         return totalMemory - getUsedMemory();
-    }
-
-    public List<Picture> showAll() {
-        return pictures;
     }
 
     public void clearMemory() {
