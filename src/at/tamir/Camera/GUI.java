@@ -1,5 +1,6 @@
 package at.tamir.Camera;
 
+import java.nio.channels.Pipe.SourceChannel;
 import java.util.*;
 
 public class GUI {
@@ -19,7 +20,7 @@ public class GUI {
             System.out.println("What do you want to do?");
             System.out.println("1. Take picture");
             System.out.println("2. Show all pictures");
-            System.out.println("3. Options for memoryCard"); // ! not started
+            System.out.println("3. Options for memoryCard");
             System.out.println("4. Turn off the camera");
 
             try {
@@ -52,7 +53,25 @@ public class GUI {
                         break;
 
                     case 3:
-                        System.out.println("Options for memoryCard not finished"); // ! not done
+                        System.out.println("- - -");
+                        System.out.println("1. Check remaining memory");
+                        System.out.println("2. Clear memory card");
+                        System.out.println("3. Insert new memory card");
+
+                        int memoryInput = scanner.nextInt();
+                        if (memoryInput == 1) {
+                            System.out.println(
+                                    "Remaining memory: " + camera.getMemoryCard().getRemainingMemory() + " MB.");
+                        } else if (memoryInput == 2) {
+                            camera.getMemoryCard().clearMemory();
+                            System.out.println("Memeory cleared");
+                        } else if (memoryInput == 3) {
+                            System.out.println("Enter the size of the new memory card (in MB): ");
+                            double newMemoryInput = scanner.nextDouble();
+                            camera.replaceMemoryCard(new MemoryCard(newMemoryInput));
+                        } else {
+                            System.out.println("Invalid Input");
+                        }
                         break;
 
                     case 4:

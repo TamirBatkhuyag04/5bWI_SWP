@@ -37,7 +37,9 @@ public class Camera {
         }
 
         if (picture != null) {
-            memoryCard.savePicture(picture);
+            if (!memoryCard.savePicture(picture)) {
+                System.out.println("Please delete some pictures or insert a new memory card.");
+            }
         }
 
         return picture;
@@ -50,6 +52,12 @@ public class Camera {
             System.out.println(picture);
         }
         return pictures;
+    }
+
+    // replaceMemory
+    public void replaceMemoryCard(MemoryCard newMemoryCard) {
+        this.memoryCard = newMemoryCard;
+        System.out.println("Memory card replaced. New memory: " + newMemoryCard.getTotalMemory() + " MB.");
     }
 
     // Getter
