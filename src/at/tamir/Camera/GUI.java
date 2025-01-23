@@ -15,9 +15,10 @@ public class GUI {
         Scanner scanner = new Scanner(System.in);
 
         while (!isDone) {
+            System.out.println("- - -");
             System.out.println("What do you want to do?");
-            System.out.println("1. Take picture"); // TODO: ongoing
-            System.out.println("2. Show all pictures"); // ! not started
+            System.out.println("1. Take picture");
+            System.out.println("2. Show all pictures");
             System.out.println("3. Options for memoryCard"); // ! not started
             System.out.println("4. Turn off the camera");
 
@@ -43,11 +44,11 @@ public class GUI {
                         } else {
                             System.out.println("Invalid Input");
                         }
-
                         break;
 
                     case 2:
-                        System.out.println("showPictures() not finished"); // ! not done
+                        System.out.println("All pictures: ");
+                        camera.showAllPictures();
                         break;
 
                     case 3:

@@ -1,39 +1,34 @@
 package at.tamir.Camera;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Picture {
     // Instance variables
     private String name;
-    private long date;
+    private LocalDateTime date;
     private int size;
 
     // Constructor
     public Picture(String name, int size) {
         this.name = name;
-        this.date = new Date().getTime();
+        this.date = LocalDateTime.now();
         this.size = size;
     }
 
     // Getter
+
     public String getName() {
         return name;
-    }
-
-    public long getDate() {
-        return date;
     }
 
     public int getSize() {
         return size;
     }
 
-    // Setter
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
+    @Override
+    public String toString() {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        return "Picture: " + name + ", " + size + "MB, date: " + date.format(format) + "";
     }
 }

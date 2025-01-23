@@ -10,11 +10,16 @@ public class MemoryCard {
     // Constructor
     public MemoryCard(double memory) {
         this.memory = memory;
+        this.pictures = new ArrayList<>();
     }
 
     // Method: savePicutre
     public void savePicture(Picture picture) {
         pictures.add(picture);
+    }
+
+    public List<Picture> showAll() {
+        return pictures;
     }
 
     // Getter

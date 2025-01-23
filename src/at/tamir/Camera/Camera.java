@@ -1,5 +1,7 @@
 package at.tamir.Camera;
 
+import java.util.List;
+
 public class Camera {
     // Instance variables
     private int pixel;
@@ -23,27 +25,32 @@ public class Camera {
     // takePicture()
     public Picture takePicture(int size) {
         Picture picture = null;
-        if (size == 1) {
-            System.out.println("taking small picture");
+        if (size == 2) {
+            System.out.println("Taking small picture");
             picture = new Picture("small.png", 2);
-        } else if (size == 2) {
-            System.out.println("taking medium picture");
+        } else if (size == 4) {
+            System.out.println("Taking medium picture");
             picture = new Picture("medium.png", 4);
-        } else if (size == 3) {
-            System.out.println("taking large picture");
+        } else if (size == 8) {
+            System.out.println("Taking large picture");
             picture = new Picture("large.png", 8);
         }
+
+        if (picture != null) {
+            memoryCard.savePicture(picture);
+        }
+
         return picture;
     }
 
     // showAllPictures()
-    // public List<Picture> showAllPictures() {
-    // System.out.println("All pictures");
-    // List<Picture> pictures = memoryCard.showAll();
-    // for (Picture picture : pictures) {
-    // System.out.println(Picture.getPicture);
-    // }
-    // }
+    public List<Picture> showAllPictures() {
+        List<Picture> pictures = memoryCard.showAll();
+        for (Picture picture : pictures) {
+            System.out.println(picture);
+        }
+        return pictures;
+    }
 
     // Getter
     public int getPixel() {
